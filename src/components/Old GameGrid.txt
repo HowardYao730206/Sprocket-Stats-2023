@@ -1,0 +1,102 @@
+import { Button, ButtonGroup, Typography, Box } from "@mui/material";
+import { useEffect, useState } from "react";
+
+function GameGrid(props) {
+
+  var numClicks = 0;
+
+  // I AM RESORTING TO MAKING 27 CONSTANTS
+  // I AM SORRY BUT I WAS TOO LOST
+  // 
+  // column 1
+  const [coneHigh1, setConeHigh1] = useState(false);
+  const handleClickConeHigh1 = () => { setConeHigh1(!coneHigh1); }
+
+  const [coneMid1, setConeMid1] = useState(false);
+  const handleClickConeMid1 = () => { setConeMid1(!coneMid1); }
+
+  const [coneLow1, setConeLow1] = useState(false);
+  const handleClickConeLow1 = () => { setConeLow1(!coneLow1); }
+
+  const column1Buttons = [
+    <Button title="High"
+      onClick={handleClickConeHigh1}
+      style={{ backgroundColor: coneHigh1 ? "yellow" : "transparent" }}
+    >High</Button>,
+    <Button title="Mid"
+      onClick={handleClickConeMid1}
+      style={{ backgroundColor: coneMid1 ? "yellow" : "transparent" }}
+    >Mid</Button>,
+    <Button title="Low"
+      onClick={handleClickConeLow1}
+      style={{ backgroundColor: coneLow1 ? "yellow" : "transparent" }}
+    >Low</Button>,
+  ];
+
+  //column 2
+  // no idea how I am going to make this cycle 3 colors
+  //  const [coneLow2, setConeLow2] = useState(1);
+  //  const handleClickConeLow2 = () => {if(coneLow2 == 1)setConeLow2(2);else if(coneLow2 == 2)setConeLow2(3);else if(coneLow2 == 3)setConeLow2(1)}
+  
+  const [coneHigh2, setConeHigh2] = useState(false);
+  const handleClickConeHigh2 = () => { setConeHigh2(!coneHigh2); }
+
+  const [coneMid2, setConeMid2] = useState(false);
+  const handleClickConeMid2 = () => { setConeMid2(!coneMid2); }
+
+  const [coneLow2, setConeLow2] = useState(false);
+  const handleClickConeLow2 = () => { setConeLow2(!coneLow2); }
+
+  const column2Buttons = [
+    <Button title="High"
+      onClick={handleClickConeHigh2}
+      style={{ backgroundColor: coneHigh2 ? "purple" : "transparent" }}
+    >High</Button>,
+    <Button title="Mid"
+      onClick={handleClickConeMid2}
+      style={{ backgroundColor: coneMid2 ? "purple" : "transparent" }}
+    >Mid</Button>,
+    <Button title="Low"
+      onClick={handleClickConeLow2}
+      style={{ backgroundColor: coneLow2 ? "purple" : "transparent" }}
+    >Low</Button>,
+  ];
+
+  
+
+
+
+
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        '& > *': {
+          m: 1,
+        },
+      }}
+    >
+      <ButtonGroup
+        orientation="vertical"
+        aria-label="vertical outlined button group"
+      >
+        {column1Buttons}
+      </ButtonGroup>
+
+      <ButtonGroup
+        orientation="vertical"
+        aria-label="vertical outlined button group"
+      >
+        {column2Buttons}
+      </ButtonGroup>
+
+
+    </Box>
+  );
+
+}
+
+
+export default GameGrid;
+
+
